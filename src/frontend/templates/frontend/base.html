@@ -20,13 +20,15 @@
     <body>    
         <div id="header">
             <a href="/">Name A Tree<a>
-            <a href="map/">Map</a>
-            <a href="create/">Create</a>
-            <a href="info">Information</a>
+            <a href="/map/">Map</a>
+            <a href="/create/">Create</a>
+            <a href="/info/">Information</a>
         </div>
 
-        {% block content %}
-        {% endblock %}
+        <div id="container">
+            {% block content %}
+            {% endblock %}
+        </div>
 
         <div id="footer">
 
