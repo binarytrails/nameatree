@@ -27,6 +27,7 @@ body
     right: 0;
     left: 0;
     color: white;
+    font-weight: 500;
     background: #1E1E1E;
 }
 
@@ -34,7 +35,19 @@ body
     {
         color: white;
         margin: 4em 2em;
+        /*border-right: 1px solid;*/
+        /*border-color: rgba(255,255,255,1);*/
     }
+
+    #header a#first
+    {
+        margin: 4em 0;
+    }
+
+        #header a i
+        {
+            margin: 0 2em;
+        }
 
 #container
 {

@@ -9,17 +9,21 @@
         <meta name="author" content="Seva Ivanov">
         <meta name="author" content="Laura H">
         
-        <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:100' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300' rel='stylesheet' type='text/css'>
+
 
         {% load static %}
         {% get_static_prefix as STATIC %}
         
         {% load staticfiles %}    
         <link rel="stylesheet" href="{{ STATIC }}frontend/css/base.css"/>
+
+        <link rel="stylesheet" type="text/css" href="{{ STATIC }}semantic/semantic.css">
+        <!--<script src="{{ STATIC }}semantic/semantic.min.js"></script>-->
     </head>
     <body>    
         <div id="header">
-            <a href="/">Name A Tree<a>
+            <a id="first" href="/"><i class="tree icon"></i>Name A Tree</a>
             <a href="/map/">Map</a>
             <a href="/create/">Create</a>
             <a href="/info/">Information</a>
