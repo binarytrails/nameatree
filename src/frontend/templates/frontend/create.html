@@ -2,6 +2,57 @@
 
 {% block content %}
 
-    Welcome Create!
+    <link rel="stylesheet" href="{{ STATIC }}frontend/css/create.css"/>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src='http://maps.google.com/maps/api/js?libraries=places'></script>
+    <script src="{{ STATIC }}frontend/js/libs/locationpicker.jquery.js"></script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function()
+        {
+            $('#locationPicker').locationpicker({
+                location: {latitude: montrealLatitude, longitude: montrealLongitude},
+                radius: 300
+            });
+            $('#create').click(function()
+            {
+                alert("Todo: create!");
+            })
+            $('#cancel').click(function()
+            {
+                window.location.href='/';
+            })
+        });
+    </script>
+
+    <div id="wrapper">
+        <div id="left">
+            <div class="ui form">
+                <div class="field">
+                    <label>Name:</label>
+                    <input id="name" placeholder="Peter, Jack, Alice..." type="text">
+                </div>
+                <div class="field">
+                    <label>Share a memory!</label>
+                    <textarea id="memory"></textarea>
+                </div>
+            </div>
+            <button id="create" class="ui secondary button" style="margin-right: 0.3em;">
+                Create
+            </button>
+            <button id="cancel" class="ui button">
+                Cancel
+            </button>
+        </div>
+
+        <div id="right" class="ui form">
+            <div class="field">
+                <label>Locate it:</label>
+            </div>
+            <div id="locationPicker"></div>
+        </div>
+    </div>
 
 {% endblock %}

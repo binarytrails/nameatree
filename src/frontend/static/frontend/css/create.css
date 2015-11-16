@@ -1,0 +1,50 @@
+
+#container
+{
+    overflow: hidden;
+    text-align: center;
+}
+
+#wrapper
+{
+    display: inline-block;
+    width: 80%;
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+    /*background: purple;*/
+}
+
+    #left, #right
+    {
+        display: inline-block;
+        width: 40%;
+        height: 100%;
+        overflow: hidden;
+        text-align: left;
+        margin: 2%;
+        /*background: green;*/
+    }
+
+        #wrapper label
+        {
+
+            font-size: 1em;
+            margin: 2.2em 0 1.5em;
+        }
+
+        #wrapper button
+        {
+            margin: 2.5em 0;
+        }
+
+        #right #locationPicker
+        {
+            width: 100%;
+            height: 50%;
+        }
+
+    #left
+    {
+        /*top: -10%;*/
+    }
