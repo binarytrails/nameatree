@@ -31,16 +31,13 @@
                 }
             ];
 
-            var styledMap = new google.maps.StyledMapType(style, {name: "Styled Map"});
+            var styledMap = new google.maps.StyledMapType(style, {name: "Trees"});
 
             var mapOptions = {
                 center: new google.maps.LatLng(montrealLatitude, montrealLongitude),
                 zoom: 10,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
-                mapTypeControlOptions: {
-                    mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
-                }
-
+                mapTypeControlOptions: {mapTypeIds: ['map_style']}
             };
 
             var map = new google.maps.Map(document.getElementById("map"), mapOptions);
