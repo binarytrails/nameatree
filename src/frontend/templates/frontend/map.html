@@ -1,7 +1,28 @@
 {% extends "frontend/base.html" %}
 
 {% block content %}
+    
+    <link rel="stylesheet" href="{{ STATIC }}frontend/css/map.css"/>
 
-    Welcome Map!
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <script>
+        function initialize()
+        {
+            montrealLatitude = 45.5088400;
+            montrealLongitude = -73.5878100;
+
+            var mapProp = {
+                center: new google.maps.LatLng(montrealLatitude, montrealLongitude),
+                zoom: 10,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+
+            var map = new google.maps.Map(document.getElementById("map"), mapProp);
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
+    <div id="map"></div>
 
 {% endblock %}
