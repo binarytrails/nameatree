@@ -14,7 +14,10 @@
         {
             $('#locationPicker').locationpicker({
                 location: {latitude: montrealLatitude, longitude: montrealLongitude},
-                radius: 5
+                radius: 5,
+                // inputBinding: {
+                //     locationNameInput: $('#location')
+                // }
             });
             $('#create').click(function()
             {
@@ -52,6 +55,9 @@
                 <label>Locate it:</label>
             </div>
             <div id="locationPicker"></div>
+            <!-- <div class="field">
+                <input id="location" type="text"/>
+            </div> -->
         </div>
     </div>
 
