@@ -15,14 +15,14 @@
 				h1 
 				{
 					text-align: center;
-					font-size: 70px;
+					font-size: 90px;
 					font-weight: 30px;
 				}
 
 				p
 				{
 					text-align: center;
-					font-size: 20px;
+					font-size: 25px;
 				}
 
 
@@ -32,10 +32,6 @@
 					font-size: 30px;
 				}
 
-				i
-				{
-
-				}
 
 			#container
 			{
@@ -49,19 +45,36 @@
 				max-width: 750px;
 				margin-right: auto;
 				margin-left: auto;
-				margin-top: 70px;
-				margin-bottom: -30px;
+				margin-top: 90px;
+				margin-bottom: 0px;
 
 			}
 
-                #main i, #main h1
-                {
-                    display: inline-block;
-                }
-                #main i
-                {
-                    margin-top: -0.7em;
-                }
+			#arrow 
+			{
+				width:100%;
+				max-width: 20%;
+				max-height: 20%;
+				margin-right: auto;
+				margin-left: auto;
+				margin-top: 8em;
+				margin-bottom: 0px;
+				text-align: center;
+
+			}
+
+				#main i, #main h1
+				{
+					display: inline-block;
+
+				}
+
+				#main i 
+				{
+					margin-top: -0.7em;
+
+				}
+
 
 			#about {
 				width:75%;
@@ -69,24 +82,24 @@
 				margin-right: auto;
 				margin-left: auto;
 				margin-top: 70px;
-				margin-bottom: -30px;
+				margin-bottom: 0px;
 
 			}
 
 			#explore
 			{
-    			width: 100%;
-   				height: 69%;
-				margin-top: 10%;
-				background: purple;
+    			width: 49.7%;
+   				height: 79%;
+				margin-top: 4.5%;
+				display: inline-block;
 			}
 
 				#explore #right
 				{
 	   				 right: 0;
-	   				 width: 50%;
+	   				 width: 100%;
 	   				 height: 100%;
-	    			 background-color: #b0e0e6;
+	    			 background-image: url(http://i65.tinypic.com/34nlbvr.png);
 				}
 
 					#explore #right p 
@@ -94,25 +107,26 @@
 						color: black;
 						text-align: center;
 						vertical-align: middle;
-						line-height: 500px;  
-						font-size: 40px;
+						line-height: 550px;  
+						font-size: 80px;
 					}
 
 
 			#name
 			{
-    			width: 100%;
-   				height: 69%;
-				margin-top: 10%;
-				background: purple;
+    			width: 50%;
+   				height: 79%;
+				margin-top: 4.5%;
+				display: inline-block;
+
 			}
 
 				#name #left
 				{
 	   				 left: 0;
-	   				 width: 50%;
+	   				 width: 100%;
 	   				 height: 100%;
-	    			 background-color: #b0e0e6;
+	    			 background-image: url(http://i66.tinypic.com/21jaw6g.jpg);
 				}
 
 					#name #left p 
@@ -120,20 +134,23 @@
 						color: black;
 						text-align: center;
 						vertical-align: middle;
-						line-height: 500px;  
-						font-size: 40px;
+						line-height: 550px;  
+						font-size: 80px;
 					}
 
 	</style>
 
 	<article id="main">
-		<i class="tree icon massive"></i>
-		<h1>NAME A TREE</h1>
+		<i class="massive tree icon"></i>
+		<h1><b>NAME A TREE<b></h1>
 	</article>
 	
 	<article id="about">
-		<p>Name a tree is a blah blah blah blah</p>
+		<p>Welcome to Name A Tree! This interactive website allows users to better connect with their environment and share this experience with other users. Simply upload photos of trees, name them, give them attributes and upload them to the tree map for all to see! </p>
 	</article>
+
+	<article id ="arrow">
+		<img src="http://d9hhrg4mnvzow.cloudfront.net/get.unbounce.com/vidyard-goodies/2060215b-arrow_037037037037000000.gif" width="150" height="100">	</article>
 
 	<div id="explore">
   		<div id="right">
@@ -141,5 +158,10 @@
  		</div>
 	</div>
 
+	<div id="name">
+  		<div id="left">
+   			<p><b>NAME</b></p>
+ 		</div>
+ 	</div>
 
 {% endblock %}
