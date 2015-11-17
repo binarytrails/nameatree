@@ -4,8 +4,44 @@
     
     <link rel="stylesheet" href="{{ STATIC }}frontend/css/map.css"/>
 
+    <link rel="stylesheet" type="text/css" href="{{ STATIC }}frontend/libs/font-awesome-4.4.0/css/font-awesome.min.css">
+
     <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <script src="{{ STATIC }}frontend/libs/fontawesome-markers.min.js"></script>
     <script>
+        var map;
+
+        function placeMarker(title, location, htmlContent)
+        {
+            var marker = new google.maps.Marker(
+            {
+                map: map,
+                title: title,
+                position: location,
+                icon: {
+                    path: fontawesome.markers.TREE,
+                    scale: 0.5,
+                    strokeWeight: 0.2,
+                    strokeColor: 'black',
+                    strokeOpacity: 1,
+                    fillColor: 'black',
+                    fillOpacity: 0.8,
+                },
+                visible: true
+            });
+
+            var infowindow = new google.maps.InfoWindow(
+            {
+                content: htmlContent
+            });
+
+            marker.addListener('click', function()
+            {
+                infowindow.open(map, marker);
+            });
+
+            marker.setMap(map);
+        }
         function initialize()
         {
             var style = [
@@ -30,20 +66,36 @@
                     ]
                 }
             ];
-
             var styledMap = new google.maps.StyledMapType(style, {name: "Trees"});
 
+            montrealLocation = new google.maps.LatLng(montrealLatitude, montrealLongitude);
+
             var mapOptions = {
-                center: new google.maps.LatLng(montrealLatitude, montrealLongitude),
+                center: montrealLocation,
                 zoom: 10,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
-                mapTypeControlOptions: {mapTypeIds: ['map_style']}
+                mapTypeControlOptions: {mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']}
             };
 
-            var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+            map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
             map.mapTypes.set('map_style', styledMap);
             map.setMapTypeId('map_style');
+
+            // building trees using django template for loop
+            {% for tree in trees %}
+
+                var name = "{{ tree.name }}",
+                    memory = "{{ tree.memory }}",
+                    latitude = {{ tree.latitude }},
+                    longitude = {{ tree.longitude }};
+
+                var htmlContent = memory,
+                    location = new google.maps.LatLng(latitude, longitude);
+
+                placeMarker(name, location, htmlContent);
+
+            {% endfor %}
         }
 
         google.maps.event.addDomListener(window, 'load', initialize);

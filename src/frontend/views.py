@@ -6,13 +6,15 @@ def home(request):
     return render(request, "frontend/home.html")
 
 def map(request):
-    return render(request, "frontend/map.html")
+    return render(request, "frontend/map.html",
+    {
+        "trees": Tree.objects.all()
+    })
 
 # @TODO: remove exempt find way to post with csrf token.
 @csrf_exempt
 def create(request):
     if request.method =='POST':
-
         tree = Tree(
             name = request.POST["name"],
             latitude = request.POST["location[latitude]"],
@@ -20,8 +22,7 @@ def create(request):
             memory = request.POST["memory"]
         )
         tree.save()
-
-        return render(request, "frontend/create.html")
+        return render(request, "frontend/map.html")
     else:
         return render(request, "frontend/create.html")
 

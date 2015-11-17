@@ -44,6 +44,8 @@
                 // TODO: add to dict: csrfmiddlewaretoken: "{{ csrf_token }}"
                 var data = {"name": name, "memory": memory, "location": location};
                 $.post( "/create/", data);
+                // TODO: check why render fails in django
+                window.location.href='/map/';
             })
             $('#cancel').click(function()
             {
