@@ -1,0 +1,5 @@
+* Remove font-awesome which is only used with fontawesome-markers plugin to provide a tree logo on the map.
+* Create:
+    - resolve csrf token issue.
+    - add captcha on create.
+* Upload image of the tree. 
