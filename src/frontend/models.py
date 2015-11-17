@@ -18,7 +18,7 @@ class Tree(models.Model):
         decimal_places = 8
     )
 
-    memory = models.DateField(
+    memory = models.CharField(
         max_length = 1000,
         blank = False
     )
