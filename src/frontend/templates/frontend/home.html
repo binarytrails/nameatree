@@ -2,166 +2,31 @@
 
 {% block content %}
 
-	{% load staticfiles %}
-	<link rel="stylesheet" href="{{ STATIC }}frontend/css/home.css"/>
+    <link rel="stylesheet" href="{{ STATIC }}frontend/css/home.css"/>
 
-	<style>
-		/*#content
-		{
-			background: green;
-			position: 
-		}*/
-
-				h1 
-				{
-					text-align: center;
-					font-size: 90px;
-					font-weight: 30px;
-				}
-
-				p
-				{
-					text-align: center;
-					font-size: 25px;
-				}
-
-
-				h3 
-				{
-					text-align:left;
-					font-size: 30px;
-				}
-
-
-			#container
-			{
-				width: 100%;
-				height: 100%;
-				background: #60D966;
-			}
-
-			#main {
-				width:75%;
-				max-width: 750px;
-				margin-right: auto;
-				margin-left: auto;
-				margin-top: 90px;
-				margin-bottom: 0px;
-
-			}
-
-			#arrow 
-			{
-				width:100%;
-				max-width: 20%;
-				max-height: 20%;
-				margin-right: auto;
-				margin-left: auto;
-				margin-top: 8em;
-				margin-bottom: 0px;
-				text-align: center;
-
-			}
-
-				#main i, #main h1
-				{
-					display: inline-block;
-
-				}
-
-				#main i 
-				{
-					margin-top: -0.7em;
-
-				}
-
-
-			#about {
-				width:75%;
-				max-width: 750px;
-				margin-right: auto;
-				margin-left: auto;
-				margin-top: 70px;
-				margin-bottom: 0px;
-
-			}
-
-			#explore
-			{
-    			width: 49.7%;
-   				height: 79%;
-				margin-top: 7.5%;
-				display: inline-block;
-			}
-
-				#explore #right
-				{
-	   				 right: 0;
-	   				 width: 100%;
-	   				 height: 100%;
-	    			 background-image: url(http://i65.tinypic.com/34nlbvr.png);
-				}
-
-					#explore #right p 
-					{
-						color: black;
-						text-align: center;
-						vertical-align: middle;
-						line-height: 550px;  
-						font-size: 80px;
-					}
-
-
-			#name
-			{
-    			width: 50%;
-   				height: 79%;
-				margin-top: 7.5%;
-				display: inline-block;
-
-			}
-
-				#name #left
-				{
-	   				 left: 0;
-	   				 width: 100%;
-	   				 height: 100%;
-	    			 background-image: url(http://i66.tinypic.com/21jaw6g.jpg);
-				}
-
-					#name #left p 
-					{
-						color: black;
-						text-align: center;
-						vertical-align: middle;
-						line-height: 550px;  
-						font-size: 80px;
-					}
-
-	</style>
-
-	<article id="main">
-		<i class="massive tree icon"></i>
-		<h1><b>NAME A TREE<b></h1>
-	</article>
-	
-	<article id="about">
-		<p>Welcome to Name A Tree! This interactive website allows users to better connect with their environment and share this experience with other users. Simply upload photos of trees, name them, give them attributes and upload them to the tree map for all to see! </p>
-	</article>
-
-	<article id ="arrow">
-		<img src="http://d9hhrg4mnvzow.cloudfront.net/get.unbounce.com/vidyard-goodies/2060215b-arrow_037037037037000000.gif" width="150" height="100">	</article>
-
-	<div id="explore">
-  		<div id="right">
-   			<p><b>EXPLORE</b></p>
- 		</div>
-	</div>
-
-	<div id="name">
-  		<div id="left">
-   			<p><b>NAME</b></p>
- 		</div>
- 	</div>
+    <div id="about" class="section">
+        <div class="wrapper">
+            <!-- <i class="massive tree icon"></i> -->
+            <p class="header">Name a tree</p>
+            <p>
+                A tree can live from 40 to 5000 years. It is one of our major vital elements but it is hard to relate to a tree due to its inertia. This interactive website allows users to connect better with their environment and share their related memories. Simply name a tree, write something sweet and locate it.
+            </p>
+            <!-- <img src="{{ STATIC }}frontend/images/arrow-bouncing-down.gif"></img> -->
+        </div>
+    </div>
+    <a href="/map/">
+        <div id="explore" class="section">
+            <div class="wrapper">
+                <p class="header">Share a memory...</p>
+            </div>
+        </div>
+    </a>
+    <a href="/create/">
+        <div id="create" class="section">
+            <div class="wrapper">
+                <p class="header"><b>Explore</b></p>
+            </div>
+        </div>
+    </a>
 
 {% endblock %}
