@@ -1,1 +1,1 @@
-django-geoposition
+Django==1.7
