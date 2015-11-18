@@ -52,10 +52,12 @@ body
 #container
 {
     position: absolute;
+    height: auto;
+    width: 100%;
     top: 0;
     right: 0;
     left: 0;
-    bottom: 0;
+    overflow: hidden;
     margin-top: 2em;
-    background: #4CC552;
+    background: #60D966;
 }
