@@ -5,6 +5,16 @@
     text-align: center;
 }
 
+     #main {
+        width:75%;
+        max-width: 750px;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 5em;
+        margin-bottom: 1.5em;
+
+            }
+
 #wrapper
 {
     display: inline-block;
@@ -12,8 +22,10 @@
     height: 100%;
     overflow: hidden;
     text-align: center;
+    margin-top: 0em;
     /*background: purple;*/
 }
+
 
     #left, #right
     {
