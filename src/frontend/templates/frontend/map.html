@@ -88,9 +88,12 @@
                 var name = "{{ tree.name }}",
                     memory = "{{ tree.memory }}",
                     latitude = {{ tree.latitude }},
-                    longitude = {{ tree.longitude }};
+                    longitude = {{ tree.longitude }},
+                    post_date = "{{ tree.shared_date }}";
 
-                var htmlContent = memory,
+                var htmlContent = "<b>Name:</b> " + name + "</br>" +
+                        "<b>Memory:</b> " + memory + "</br>" +
+                        "<b>Date:</b> " + post_date,
                     location = new google.maps.LatLng(latitude, longitude);
 
                 placeMarker(name, location, htmlContent);
