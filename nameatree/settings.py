@@ -9,7 +9,7 @@ TEMPLATE_DEBUG = DEBUG
 DIR = os.path.abspath(os.path.dirname(__file__))
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['nameatree.org']
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '%a#opp4^v1w4^y*jxa8nea$!we6v53q&1ond162a_(w%gqn@ez'
