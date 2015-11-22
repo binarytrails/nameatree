@@ -21,7 +21,8 @@
             });
             $('#create').click(function()
             {
-                var name = $('#name').val(),
+                var author = $('#author').val(),
+                    treeName = $('#treeName').val(),
                     memory = $('#memory').val(),
                     map = $('#locationPicker').locationpicker('map'),
                     location = {
@@ -29,9 +30,11 @@
                         "longitude": map.location.longitude
                     };
 
+                if(author == ""){author = "Anonymous"};
+
                 // mark empty fields with red
-                if(name == ""){$('#nameParent').addClass("error");}
-                else{$('#nameParent').removeClass("error");}
+                if(treeName == ""){$('#treeNameParent').addClass("error");}
+                else{$('#treeNameParent').removeClass("error");}
                 if(memory == ""){$('#memoryParent').addClass("error");}
                 else{$('#memoryParent').removeClass("error");}
 
@@ -43,9 +46,11 @@
                 
                 // TODO: add to dict: csrfmiddlewaretoken: "{{ csrf_token }}"
                 var data = {"name": name, "memory": memory, "location": location};
-                $.post( "/create/", data);
+                //$.post( "/create/", data);
+                alert(author);
+
                 // TODO: check why render fails in django
-                window.location.href='/map/';
+                //window.location.href='/map/';
             })
             $('#cancel').click(function()
             {
@@ -57,13 +62,17 @@
     <div id="wrapper">
         <div id="left">
             <div class="ui form">
-                <div id="nameParent" class="field">
-                    <label>Name:</label>
-                    <input id="name" placeholder="Peter, Jack, Alice..." type="text">
+                <div id="treeNameParent" class="field">
+                    <label>Tree name:</label>
+                    <input id="treeName" placeholder="Peter, Jack, Alice..." type="text">
                 </div>
                 <div id="memoryParent" class="field">
                     <label>Share a memory!</label>
                     <textarea id="memory"></textarea>
+                </div>
+                <div id="authorParent" class="field">
+                    <label>Author (Optional):</label>
+                    <input id="author" placeholder="Anonymous" type="text">
                 </div>
             </div>
             <button id="create" class="ui secondary button" style="margin-right: 0.3em;">

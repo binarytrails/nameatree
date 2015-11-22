@@ -1,7 +1,22 @@
 from django.db import models
 from datetime import date
 
+class Author(models.Model):
+
+    name = models.CharField(
+        max_length = 20,
+        default = "Anonymous",
+        blank = False
+    )
+
+    ip_address = models.CharField(
+        max_length = 50,
+        blank = False
+    )
+
 class Tree(models.Model):
+
+    author = models.ForeignKey(Author)
 
     name = models.CharField(
         max_length = 20,
