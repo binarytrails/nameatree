@@ -5,11 +5,10 @@
 import os, sys
 
 DEBUG = True
-TEMPLATE_DEBUG = DEBUG
 DIR = os.path.abspath(os.path.dirname(__file__))
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
 
-ALLOWED_HOSTS = ['nameatree.org']
+ALLOWED_HOSTS = ['nameatree.org', '127.0.0.1']
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '%a#opp4^v1w4^y*jxa8nea$!we6v53q&1ond162a_(w%gqn@ez'
@@ -49,7 +48,6 @@ DATABASES = {
     }
 }
 
-
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 
 # URL prefix for static files.
@@ -62,6 +60,24 @@ STATICFILES_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
 )
+
+TEMPLATES = [
+{
+    'BACKEND': 'django.template.backends.django.DjangoTemplates',
+    'DIRS': [
+        '/'.join([PROJECT_ROOT, 'frontend', 'templates']),
+    ],
+    'APP_DIRS': True,
+    'OPTIONS': {
+        'context_processors': [
+            'django.template.context_processors.debug',
+            'django.template.context_processors.request',
+            'django.contrib.auth.context_processors.auth',
+            'django.contrib.messages.context_processors.messages',
+        ],
+    },
+},
+]
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
